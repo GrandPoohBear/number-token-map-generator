@@ -1,0 +1,19 @@
+{
+  "name": "numbers",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Andy Isaacson <andy@tutukain.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.166",
+    "lodash": "^4.17.20"
+  }
+}
