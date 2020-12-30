@@ -6,7 +6,7 @@ export const tryForSquareToken = (num: number): Token[] => {
       {
         type: 'square',
         description: `${num} is square!`,
-        relevance: 20,
+        relevance: 5 * Math.log10(num) ** 2,
       },
     ];
   }

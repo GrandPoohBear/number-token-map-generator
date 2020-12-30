@@ -6,7 +6,7 @@ export const tryForFibonacciToken = (num: number): Token[] => {
       {
         type: 'fibonacci',
         description: `${num} is a fibonacci number!`,
-        relevance: 20, //TODO: a higher number seems more relevant
+        relevance: 15 * Math.log10(num) ** 2,
       },
     ];
   }

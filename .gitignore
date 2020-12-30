@@ -3,3 +3,4 @@ node_modules
 dist
 yarn-error.log
 src/personal-data.ts
+output-token-map.json

@@ -6,7 +6,7 @@ export const tryForPrimeToken = (num: number): Token[] => {
       {
         type: 'prime',
         description: `${num} is prime!`,
-        relevance: 30,
+        relevance: 10 * Math.log10(num) ** 3,
       },
     ];
   }

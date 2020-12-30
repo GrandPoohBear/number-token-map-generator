@@ -11,7 +11,7 @@ export const tryForCubeToken = (num: number): Token[] => {
       {
         type: 'cube',
         description: `${num} is a cube!`,
-        relevance: 40,
+        relevance: 10 * Math.log10(num) ** 2,
       },
     ];
   }
