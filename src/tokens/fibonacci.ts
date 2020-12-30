@@ -1,14 +1,10 @@
-import { Token, TokenType } from '../models';
+import { Token } from '../models';
 
-export interface FibonacciToken extends Token {
-  type: TokenType.FIBONACCI;
-}
-
-export const tryForFibonacciToken = (num: number): FibonacciToken[] => {
+export const tryForFibonacciToken = (num: number): Token[] => {
   if (fibonacciNumbers.has(num)) {
     return [
       {
-        type: TokenType.FIBONACCI,
+        type: 'fibonacci',
         description: `${num} is a fibonacci number!`,
         relevance: 20, //TODO: a higher number seems more relevant
       },

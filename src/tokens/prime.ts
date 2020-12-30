@@ -1,14 +1,10 @@
-import { Token, TokenType } from '../models';
+import { Token } from '../models';
 
-export interface PrimeToken extends Token {
-  type: TokenType.PRIME;
-}
-
-export const tryForPrimeToken = (num: number): PrimeToken[] => {
+export const tryForPrimeToken = (num: number): Token[] => {
   if (primes.has(num)) {
     return [
       {
-        type: TokenType.PRIME,
+        type: 'prime',
         description: `${num} is prime!`,
         relevance: 30,
       },

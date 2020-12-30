@@ -1,14 +1,10 @@
-import { Token, TokenType } from '../models';
+import { Token } from '../models';
 
-export interface BirthdayToken extends Token {
-  type: TokenType.BIRTHDAY;
-}
-
-export const tryForBirthdayToken = (num: number): BirthdayToken[] => {
+export const tryForBirthdayToken = (num: number): Token[] => {
   const nameList = birthdays[num];
   if (nameList) {
     return nameList.map((name) => ({
-      type: TokenType.BIRTHDAY,
+      type: 'birthday',
       description: `${name}'s birthday!`,
       relevance: 50,
     }));
@@ -18,4 +14,5 @@ export const tryForBirthdayToken = (num: number): BirthdayToken[] => {
 
 const birthdays: { [key: number]: string[] } = {
   716: ['Andy'],
+  // TODO: add more birthdays of people
 };

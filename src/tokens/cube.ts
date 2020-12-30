@@ -1,19 +1,15 @@
-import { Token, TokenType } from '../models';
-
-export interface CubeToken extends Token {
-  type: TokenType.CUBE;
-}
+import { Token } from '../models';
 
 const isCube = (num: number): boolean => {
   const absNum = Math.abs(num);
   return Math.round(absNum ** (1 / 3)) ** 3 === absNum;
 };
 
-export const tryForCubeToken = (num: number): CubeToken[] => {
+export const tryForCubeToken = (num: number): Token[] => {
   if (isCube(num)) {
     return [
       {
-        type: TokenType.CUBE,
+        type: 'cube',
         description: `${num} is a cube!`,
         relevance: 40,
       },
