@@ -1,17 +1,28 @@
-import { Token } from '../models';
+import { ComponentClassTokenGenerator } from '.';
 
-export const tryForPrimeToken = (num: number): Token[] => {
-  if (primes.has(num)) {
-    return [
-      {
-        type: 'prime',
-        description: `${num} is prime!`,
-        relevance: 10 * Math.log10(num) ** 3,
-      },
-    ];
+export class PrimeGenerator extends ComponentClassTokenGenerator {
+  isInComponentClass(num: number): boolean {
+    return primes.has(num);
   }
-  return [];
-};
+  getTokenType(): string {
+    return 'prime';
+  }
+  getDescriptionSuffix(components: number[]): string {
+    if (components.length === 1) {
+      return ' is a prime number!';
+    } else if (components.length === 2) {
+      return ' are both prime numbers!';
+    } else {
+      return ' are all prime numbers!';
+    }
+  }
+  getBaseRelevance(): number {
+    return 30;
+  }
+  getRelevanceDigitBonus(): number {
+    return 40;
+  }
+}
 
 export const primes = new Set([
   2,

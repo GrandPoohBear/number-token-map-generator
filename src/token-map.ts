@@ -1,32 +1,41 @@
-import { Token } from './models';
-import { tryForBirthdayToken } from './tokens/birthday';
-import { tryForCubeToken } from './tokens/cube';
-import { tryForFibonacciToken } from './tokens/fibonacci';
-import { tryForPrimeToken } from './tokens/prime';
-import { tryForSquareToken } from './tokens/square';
-import { tryForPersonalToken } from './tokens/personal';
 import _ from 'lodash';
-import { tryForPalindromeToken } from './tokens/palindrome';
-import { tryForPairedMultipleToken } from './tokens/paired-multiple';
-import { tryForAllDigitsMatchToken } from './tokens/all-digits-match';
-import { tryForPowerToken } from './tokens/powers';
+import { TimeNumber, Token } from './models';
+import { TokenGenerator } from './token-generators';
+import { AllDigitsMatchGenerator } from './token-generators/all-digits-match';
+import { BirthdayGenerator } from './token-generators/birthday';
+import { CubeGenerator } from './token-generators/cube';
+import { FibonacciGenerator } from './token-generators/fibonacci';
+import { PairedMultipleGenerator } from './token-generators/paired-multiple';
+import { PalindromeGenerator } from './token-generators/palindrome';
+import { PersonalGenerator } from './token-generators/personal';
+import {
+  PowerOf2Generator,
+  PowerOf3Generator,
+  PowerOf4Generator,
+  PowerOf5Generator,
+} from './token-generators/powers';
+import { PrimeGenerator } from './token-generators/prime';
+import { SquareGenerator } from './token-generators/square';
 
-const tokenPredicates: ((num: number) => Token[])[] = [
-  tryForPrimeToken,
-  tryForSquareToken,
-  tryForCubeToken,
-  tryForFibonacciToken,
-  tryForBirthdayToken,
-  tryForPersonalToken,
-  tryForPalindromeToken,
-  tryForPairedMultipleToken,
-  tryForAllDigitsMatchToken,
-  tryForPowerToken,
+export const allGenerators: TokenGenerator[] = [
+  new AllDigitsMatchGenerator(),
+  new BirthdayGenerator(),
+  new CubeGenerator(),
+  new FibonacciGenerator(),
+  new PairedMultipleGenerator(),
+  new PalindromeGenerator(),
+  new PersonalGenerator(),
+  new PowerOf2Generator(),
+  new PowerOf3Generator(),
+  new PowerOf4Generator(),
+  new PowerOf5Generator(),
+  new PrimeGenerator(),
+  new SquareGenerator(),
 ];
 
-const getTokens = (num: number): Token[] => {
-  return tokenPredicates
-    .flatMap((p) => p(num) || [])
+const getTokens = (timeNumber: TimeNumber): Token[] => {
+  return allGenerators
+    .flatMap((generator) => generator.getTokens(timeNumber) || [])
     .filter(
       (t: Token) =>
         _.isNumber(t.relevance) && _.isFinite(t.relevance) && t.relevance > 0
@@ -36,10 +45,11 @@ const getTokens = (num: number): Token[] => {
 export const buildTokenMap = (): { [key: number]: Token[] } => {
   const tokenMap: { [key: number]: Token[] } = {};
 
-  for (let i = 0; i < 2359; i++) {
-    const tokens = getTokens(i);
-    if (tokens.length > 0) {
-      tokenMap[i] = tokens;
+  for (let h = 0; h < 24; h++) {
+    for (let m = 0; m < 60; m++) {
+      const timeNumber = new TimeNumber(h, m);
+      const tokens = getTokens(timeNumber);
+      tokenMap[timeNumber.asDecimalNumber()] = tokens;
     }
   }
 
