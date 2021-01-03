@@ -3,8 +3,8 @@ import { TimeNumber, Token } from '../models';
 
 export class BirthdayGenerator extends TokenGenerator {
   private birthdays: { [key: number]: string[] } = {
+    212: ['Charles Darwin'],
     716: ['Andy'],
-    // TODO: add more birthdays of people
   };
 
   getTokens(timeNumber: TimeNumber): Token[] {
