@@ -20,7 +20,7 @@ export class PrimeGenerator extends ComponentClassTokenGenerator {
     return 30;
   }
   getRelevanceDigitBonus(): number {
-    return 40;
+    return 20;
   }
 }
 

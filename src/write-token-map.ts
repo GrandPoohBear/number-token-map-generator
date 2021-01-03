@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import { buildTokenMap } from './token-map';
-import { getAllSubstrings } from './string-utility';
 import * as fs from 'fs';
 
 console.log('Building token map');

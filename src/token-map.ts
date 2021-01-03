@@ -6,6 +6,10 @@ import { BirthdayGenerator } from './token-generators/birthday';
 import { CubeGenerator } from './token-generators/cube';
 import { FibonacciGenerator } from './token-generators/fibonacci';
 import { HolidayGenerator } from './token-generators/holidays';
+import {
+  DecreasingDigitsTokenGenerator,
+  IncreasingDigitsTokenGenerator,
+} from './token-generators/increasing-decreasing';
 import { PairedMultipleGenerator } from './token-generators/paired-multiple';
 import { PalindromeGenerator } from './token-generators/palindrome';
 import { PersonalGenerator } from './token-generators/personal';
@@ -22,8 +26,10 @@ export const allGenerators: TokenGenerator[] = [
   new AllDigitsMatchGenerator(),
   new BirthdayGenerator(),
   new CubeGenerator(),
+  new DecreasingDigitsTokenGenerator(),
   new FibonacciGenerator(),
   new HolidayGenerator(),
+  new IncreasingDigitsTokenGenerator(),
   new PairedMultipleGenerator(),
   new PalindromeGenerator(),
   new PersonalGenerator(),
