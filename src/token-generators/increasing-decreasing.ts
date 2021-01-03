@@ -6,7 +6,7 @@ export class IncreasingDigitsTokenGenerator extends TokenGenerator {
     const digits = timeNumber.asDigits();
     let lastVal = -1;
     for (let i = 0; i < digits.length; i++) {
-      if (digits[i] < lastVal) {
+      if (digits[i] <= lastVal) {
         return [];
       }
       lastVal = digits[i];
@@ -27,7 +27,7 @@ export class DecreasingDigitsTokenGenerator extends TokenGenerator {
     const digits = timeNumber.asDigits();
     let lastVal = 100;
     for (let i = 0; i < digits.length; i++) {
-      if (digits[i] > lastVal) {
+      if (digits[i] >= lastVal) {
         return [];
       }
       lastVal = digits[i];
