@@ -41,6 +41,9 @@ export const allStringComponents = (numStr: string): string[][] => {
   for (let i = 1; i < numStr.length; i++) {
     let firstPart = numStr.substring(0, i);
     let remainder = numStr.substring(i);
+    if (remainder.startsWith('0')) {
+      continue;
+    }
     let remainderComponents = allStringComponents(remainder);
     remainderComponents.forEach((componentSet) => {
       accumulator.push([firstPart, ...componentSet]);

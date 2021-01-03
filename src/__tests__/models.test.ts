@@ -2,6 +2,7 @@ import { TimeNumber } from '../models';
 
 describe('TimeNumber class', () => {
   const timeNumberA = new TimeNumber(12, 48);
+  const timeNumberB = new TimeNumber(10, 16);
 
   test('asDecimalNumber', () => {
     expect(timeNumberA.asDecimalNumber()).toEqual(1248);
@@ -28,5 +29,10 @@ describe('TimeNumber class', () => {
         [124, 8],
       ])
     );
+  });
+
+  test('splits zeros properly', () => {
+    expect(timeNumberB.asAllNumberComponents()).not.toContainEqual([1, 16]);
+    expect(timeNumberB.asAllNumberComponents()).not.toContainEqual([1, 1, 6]);
   });
 });
