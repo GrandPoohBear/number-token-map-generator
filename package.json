@@ -1,11 +1,12 @@
 {
-  "name": "numbers",
+  "name": "number-token-map-generator",
   "version": "1.0.0",
   "main": "dist/index.js",
   "author": "Andy Isaacson <andy@tutukain.com>",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/write-token-map.ts",
+    "prepublish": "tsc"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
