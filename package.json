@@ -1,6 +1,6 @@
 {
   "name": "@grandpoohbear/number-token-map-generator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Andy Isaacson <andy@tutukain.com>",
