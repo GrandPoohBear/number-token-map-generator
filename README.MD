@@ -16,4 +16,6 @@ This project is open source and permissively licensed. My intention is to create
 
 ## Contributing
 
-Interested in improving and contributing to this project? Sweet! Check out the [Issues Page](https://github.com/GrandPoohBear/number-token-map-generator/issues) for a start, and feel free to reach out to me if you have any questions.
+Interested in improving and contributing to this project? Sweet! Check out the [Issues Page](https://github.com/GrandPoohBear/number-token-map-generator/issues) for a start, and feel free to reach out to me if you have any questions:
+
+andygetshismail at gmail.com
