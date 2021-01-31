@@ -13,7 +13,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/write-token-map.ts",
+    "generate-json": "ts-node src/write-token-map.ts",
     "prepublish": "tsc"
   },
   "devDependencies": {
