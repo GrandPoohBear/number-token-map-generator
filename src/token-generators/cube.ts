@@ -18,10 +18,8 @@ export class CubeGenerator extends ComponentClassTokenGenerator {
   getDescriptionSuffix(components: number[]): string {
     if (components.length === 1) {
       return ' is a cubic number!';
-    } else if (components.length === 2) {
-      return ' are both cubic numbers!';
     } else {
-      return ' are all cubic numbers!';
+      return ' are both cubic numbers!';
     }
   }
   isInComponentClass(num: number): boolean {

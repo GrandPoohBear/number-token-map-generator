@@ -2,9 +2,8 @@ import _ from 'lodash';
 import { TokenGenerator } from '.';
 import { TimeNumber, Token } from '../models';
 
-type SimpleDateArray = [month: number, day: number];
 interface SimpleDateEntry {
-  date: SimpleDateArray;
+  date: number[];
   description: string;
   relevance?: number;
 }

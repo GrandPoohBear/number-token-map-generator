@@ -22,6 +22,8 @@ import {
 } from './token-generators/powers';
 import { PrimeGenerator } from './token-generators/prime';
 import { SquareGenerator } from './token-generators/square';
+import { PrimeFactorizationGenerator } from './token-generators/prime-factorization';
+import { PiSubsequenceGenerator } from './token-generators/pi-subsequence';
 
 export const allGenerators: TokenGenerator[] = [
   new AllDigitsMatchGenerator(),
@@ -39,7 +41,9 @@ export const allGenerators: TokenGenerator[] = [
   new PowerOf3Generator(),
   new PowerOf4Generator(),
   new PowerOf5Generator(),
+  new PrimeFactorizationGenerator(),
   new PrimeGenerator(),
+  new PiSubsequenceGenerator(),
   new SquareGenerator(),
 ];
 

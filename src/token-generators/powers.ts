@@ -13,10 +13,8 @@ const makeDescriptionSuffixFunc = (
   return (components: number[]): string => {
     if (components.length === 1) {
       return ` is a power of ${base}!`;
-    } else if (components.length === 2) {
-      return ` are both powers of ${base}!`;
     } else {
-      return ` are all powers of ${base}!`;
+      return ` are both powers of ${base}!`;
     }
   };
 };

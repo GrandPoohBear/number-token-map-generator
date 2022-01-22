@@ -17,7 +17,7 @@ export class PairedMultipleGenerator extends TokenGenerator {
       if (firstHalf * i === secondHalf) {
         tokens.push({
           type: 'paired-multiple',
-          description: `${secondHalf} is ${i} times ${firstHalf}`,
+          description: `${firstHalf} times ${i} is ${secondHalf}`,
           relevance: 40,
         });
       }
@@ -25,7 +25,7 @@ export class PairedMultipleGenerator extends TokenGenerator {
       if (secondHalf * i === firstHalf) {
         tokens.push({
           type: 'paired-multiple',
-          description: `${firstHalf} is ${i} times ${secondHalf}`,
+          description: `${firstHalf} divided by ${i} is ${secondHalf}`,
           relevance: 40,
         });
       }

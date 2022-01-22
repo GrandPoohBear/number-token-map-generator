@@ -25,29 +25,13 @@ export class TimeNumber {
     return this.asDecimalNumber().toString();
   };
 
-  public asAllNumberComponents = (): number[][] => {
-    const stringComponents = allStringComponents(this.asString());
-    return stringComponents.map((arr) => arr.map(Number));
+  public asComponents = (): number[][] => {
+    return [[this.asDecimalNumber()], [this.hours, this.minutes]];
+  };
+
+  public asUsableComponents = (): number[][] => {
+    return this.hours === this.minutes
+      ? [[this.asDecimalNumber()]]
+      : this.asComponents();
   };
 }
-
-export const allStringComponents = (numStr: string): string[][] => {
-  if (numStr.length == 1) {
-    return [[numStr]];
-  }
-
-  let accumulator: string[][] = [[numStr]];
-
-  for (let i = 1; i < numStr.length; i++) {
-    let firstPart = numStr.substring(0, i);
-    let remainder = numStr.substring(i);
-    if (remainder.startsWith('0')) {
-      continue;
-    }
-    let remainderComponents = allStringComponents(remainder);
-    remainderComponents.forEach((componentSet) => {
-      accumulator.push([firstPart, ...componentSet]);
-    });
-  }
-  return accumulator;
-};

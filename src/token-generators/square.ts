@@ -17,10 +17,8 @@ export class SquareGenerator extends ComponentClassTokenGenerator {
   getDescriptionSuffix(components: number[]): string {
     if (components.length === 1) {
       return ' is a square number!';
-    } else if (components.length === 2) {
-      return ' are both square numbers!';
     } else {
-      return ' are all square numbers!';
+      return ' are both square numbers!';
     }
   }
   isInComponentClass(num: number): boolean {

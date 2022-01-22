@@ -21,7 +21,7 @@ export abstract class ComponentClassTokenGenerator extends TokenGenerator {
   };
 
   getTokens(timeNumber: TimeNumber): Token[] {
-    return timeNumber.asAllNumberComponents().flatMap((componentSet) => {
+    return timeNumber.asUsableComponents().flatMap((componentSet) => {
       if (componentSet.every(this.isInComponentClass)) {
         return [
           {

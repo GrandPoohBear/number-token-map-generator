@@ -15,6 +15,16 @@ export class AllDigitsMatchGenerator extends TokenGenerator {
         },
       ];
     }
+
+    if (timeNumber.hours === timeNumber.minutes) {
+      return [
+        {
+          type: 'hours-minutes-match',
+          description: `The hours and minutes are the same!`,
+          relevance: 50,
+        },
+      ];
+    }
     return [];
   }
 }

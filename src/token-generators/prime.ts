@@ -10,10 +10,8 @@ export class PrimeGenerator extends ComponentClassTokenGenerator {
   getDescriptionSuffix(components: number[]): string {
     if (components.length === 1) {
       return ' is a prime number!';
-    } else if (components.length === 2) {
-      return ' are both prime numbers!';
     } else {
-      return ' are all prime numbers!';
+      return ' are both prime numbers!';
     }
   }
   getBaseRelevance(): number {

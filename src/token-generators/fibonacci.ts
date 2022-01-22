@@ -4,10 +4,8 @@ export class FibonacciGenerator extends ComponentClassTokenGenerator {
   getDescriptionSuffix(components: number[]): string {
     if (components.length === 1) {
       return ' is in the fibonacci sequence!';
-    } else if (components.length === 2) {
-      return ' are both in the fibonacci sequence!';
     } else {
-      return ' are all in the fibonacci sequence!';
+      return ' are both in the fibonacci sequence!';
     }
   }
   isInComponentClass(num: number): boolean {
